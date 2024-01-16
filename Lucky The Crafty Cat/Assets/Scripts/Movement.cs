@@ -10,12 +10,6 @@ public class Movement : MonoBehaviour
     // The height that the player can jump
     [SerializeField] float jumpHeight = 2f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
