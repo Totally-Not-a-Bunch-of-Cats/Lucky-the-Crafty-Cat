@@ -6,13 +6,9 @@ public class Movement : MonoBehaviour
 {
     
     // The speed at which the player moves
-    float movementSpeed = 1f;
+    [SerializeField] float movementSpeed = 0.01f;
     // The height that the player can jump
-    float jumpHeight = 2f;
-    // Gravity
-    float gravity = 9.8f;
-    // Vector that the player is moving by
-    Vector3 movementVector = new Vector3(0,0,0);
+    [SerializeField] float jumpHeight = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,31 +20,31 @@ public class Movement : MonoBehaviour
     void Update()
     {
         // When the user presses the w key or up arrow
-        if(Input.GetKeyDown("Forward"))
+        if(Input.GetButton("Forward"))
         {
             Forward();
         }
 
         // When the user presses the s key or down arrow
-        if(Input.GetKeyDown("Backward"))
+        if(Input.GetButton("Backward"))
         {
             Backward();
         }
 
         // When the user presses the a key or left arrow
-        if(Input.GetKeyDown("Left"))
+        if(Input.GetButton("Left"))
         {
             Left();
         }
 
         // When the user presses the d key or right arrow
-        if(Input.GetKeyDown("Right"))
+        if(Input.GetButton("Right"))
         {
             Right();
         }
 
         // When the user presses the space
-        if(Input.GetKeyDown("Jump"))
+        if(Input.GetButtonDown("Jump") && gameObject.transform.position.y == 1)
         {
             Jump();
         }
@@ -59,7 +55,8 @@ public class Movement : MonoBehaviour
     /// </summary>
     void Forward()
     {
-        
+        Vector3 forwardTransform = new Vector3(0, 0, movementSpeed);
+        gameObject.transform.position += forwardTransform;
     }
 
     /// <summary>
@@ -67,7 +64,8 @@ public class Movement : MonoBehaviour
     /// </summary>
     void Backward()
     {
-
+        Vector3 backwardTransform = new Vector3(0, 0, -movementSpeed);
+        gameObject.transform.position += backwardTransform;
     }
 
     /// <summary>
@@ -75,7 +73,8 @@ public class Movement : MonoBehaviour
     /// </summary>
     void Left()
     {
-
+        Vector3 leftTransform = new Vector3(-movementSpeed, 0, 0);
+        gameObject.transform.position += leftTransform;
     }
 
     /// <summary>
@@ -83,7 +82,8 @@ public class Movement : MonoBehaviour
     /// </summary>
     void Right()
     {
-
+        Vector3 rightTransform = new Vector3(movementSpeed, 0, 0);
+        gameObject.transform.position += rightTransform;
     }
 
     /// <summary>
@@ -91,6 +91,6 @@ public class Movement : MonoBehaviour
     /// </summary>
     void Jump()
     {
-
+        gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
     }
 }
