@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security;
 using UnityEditor;
 using UnityEngine;
 
@@ -16,6 +17,10 @@ public class Movement : MonoBehaviour
     // The health of the player
     [SerializeField] float playerHealth = 100f;
 
+    // Checking for if the player is moving diagonal
+    private bool vertical = false;
+    private bool horizontal = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -23,24 +28,44 @@ public class Movement : MonoBehaviour
         if(Input.GetButton("Forward"))
         {
             Forward();
+            vertical = true;
+        }
+        else if(Input.GetButtonUp("Forward"))
+        {
+            vertical = false;
         }
 
         // When the user presses the s key or down arrow
         if(Input.GetButton("Backward"))
         {
             Backward();
+            vertical = true;
+        }
+        else if(Input.GetButtonUp("Backward"))
+        {
+            vertical = false;
         }
 
         // When the user presses the a key or left arrow
         if(Input.GetButton("Left"))
         {
             Left();
+            horizontal = true;
+        }
+        else if(Input.GetButtonUp("Left"))
+        {
+            horizontal = false;
         }
 
         // When the user presses the d key or right arrow
         if(Input.GetButton("Right"))
         {
             Right();
+            horizontal = true;
+        }
+        else if(Input.GetButtonUp("Right"))
+        {
+            horizontal = false;
         }
 
         // When the user presses the space
@@ -53,6 +78,15 @@ public class Movement : MonoBehaviour
         if(Input.GetButton("Run"))
         {
             Run();
+        }
+        else
+        {
+            movementSpeed = 0.01f;
+        }
+
+        if(horizontal && vertical)
+        {
+            movementSpeed = 0.005f;
         }
         else
         {

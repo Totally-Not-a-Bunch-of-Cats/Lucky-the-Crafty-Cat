@@ -353,6 +353,10 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Camera/CameraController.cs"
+"Assets/Scripts/Enemies/Bee.cs"
+"Assets/Scripts/Enemies/Beehive.cs"
+"Assets/Scripts/Enemies/Enemy.cs"
+"Assets/Scripts/Enemies/Slime.cs"
 "Assets/Scripts/Player/Actions.cs"
 "Assets/Scripts/Player/Movement.cs"
 -langversion:9.0
