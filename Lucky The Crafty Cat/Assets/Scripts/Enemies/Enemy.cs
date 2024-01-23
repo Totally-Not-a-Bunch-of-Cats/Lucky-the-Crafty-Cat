@@ -13,6 +13,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float health = 100f;
     // Damage the slime does
     [SerializeField] protected float damage = 25f;
-
+    
+    /// <summary>
+    /// Moves the enemy towards the player
+    /// </summary>
+    public void moveTowardsPlayer(GameObject player, float yOffset)
+    {
+        gameObject.transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, yOffset, player.transform.position.z), movementSpeed);
+    }
     
 }

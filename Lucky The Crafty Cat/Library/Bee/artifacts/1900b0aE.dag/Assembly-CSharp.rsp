@@ -355,6 +355,7 @@
 "Assets/Scripts/Camera/CameraController.cs"
 "Assets/Scripts/Enemies/Bee.cs"
 "Assets/Scripts/Enemies/Beehive.cs"
+"Assets/Scripts/Enemies/Bird.cs"
 "Assets/Scripts/Enemies/Enemy.cs"
 "Assets/Scripts/Enemies/Slime.cs"
 "Assets/Scripts/Player/Actions.cs"

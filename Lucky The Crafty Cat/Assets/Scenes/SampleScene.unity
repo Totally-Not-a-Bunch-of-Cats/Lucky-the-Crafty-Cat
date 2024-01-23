@@ -131,9 +131,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1793019848953346465, guid: 1ef9ad327be569348b9598b73d0f2db0, type: 3}
+      propertyPath: zoneOfControl
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 816830554223848613, guid: 1ef9ad327be569348b9598b73d0f2db0, type: 3}
       propertyPath: m_Name
       value: Beehive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320817971440891074, guid: 1ef9ad327be569348b9598b73d0f2db0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2284380866746850494, guid: 1ef9ad327be569348b9598b73d0f2db0, type: 3}
+      propertyPath: xSpread
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2284380866746850494, guid: 1ef9ad327be569348b9598b73d0f2db0, type: 3}
+      propertyPath: zSpread
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252912302420121028, guid: 1ef9ad327be569348b9598b73d0f2db0, type: 3}
+      propertyPath: zSpread
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252912302420121028, guid: 1ef9ad327be569348b9598b73d0f2db0, type: 3}
+      propertyPath: rotateClockwise
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566655238879673784, guid: 1ef9ad327be569348b9598b73d0f2db0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8940125360122157128, guid: 1ef9ad327be569348b9598b73d0f2db0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -145,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8940125360122157128, guid: 1ef9ad327be569348b9598b73d0f2db0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.897709
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8940125360122157128, guid: 1ef9ad327be569348b9598b73d0f2db0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -774,7 +802,7 @@ GameObject:
   - component: {fileID: 1283404160}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

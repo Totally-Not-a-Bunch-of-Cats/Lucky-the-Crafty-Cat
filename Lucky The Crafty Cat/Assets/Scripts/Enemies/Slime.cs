@@ -20,17 +20,15 @@ public class Slime : Enemy
         damage = 25f;
     }
 
+    // Called On the Intialization of Script
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     // Update is called once per frame
     void Update()
     {
-        moveTowardsPlayer();
-    }
-
-    /// <summary>
-    /// Moves the slime towards the player
-    /// </summary>
-    void moveTowardsPlayer()
-    {
-        gameObject.transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, 0, player.transform.position.z), movementSpeed);
+        moveTowardsPlayer(player, 0);
     }
 }

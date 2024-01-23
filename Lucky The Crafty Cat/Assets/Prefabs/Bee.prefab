@@ -479,7 +479,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!136 &5949431587355099287
 CapsuleCollider:
@@ -516,3 +516,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36ab41ad2e7ffc4fb772757d608a914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 0.01
+  health: 100
+  damage: 25
+  player: {fileID: 0}
+  parentHive: {fileID: 0}
+  xSpread: 1
+  yOffset: 2
+  zSpread: 2
+  centerPoint: {fileID: 0}
+  rotateClockwise: 0
+  rotSpeed: 3
+  isAngry: 0
+  returnToStart: 0
