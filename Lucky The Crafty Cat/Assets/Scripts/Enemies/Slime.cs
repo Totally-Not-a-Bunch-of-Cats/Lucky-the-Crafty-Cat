@@ -4,12 +4,16 @@ using UnityEngine;
 
 /// <summary>
 /// Controls the behavior of the slime enemy
+/// Chases the player across the map
 /// </summary>
 public class Slime : Enemy
 {
     // The player model
     [SerializeField] private GameObject player;
     
+    /// <summary>
+    /// Initializing Slime
+    /// </summary>
     public Slime()
     {
         // Movement Speed of the Slime
@@ -20,15 +24,21 @@ public class Slime : Enemy
         damage = 25f;
     }
 
-    // Called On the Intialization of Script
+    /// <summary>
+    /// Called On the Intialization of Script
+    /// </summary>
     private void Start()
     {
+        // Finds the player object in the scene when script is initialized
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
     void Update()
     {
-        moveTowardsPlayer(player, 0);
+        // Moves towards the players using the moveTowardsPlayer function in the parent script
+        MoveTowardsPlayer(player, 0);
     }
 }

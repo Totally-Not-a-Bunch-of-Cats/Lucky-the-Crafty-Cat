@@ -358,6 +358,8 @@
 "Assets/Scripts/Enemies/Bird.cs"
 "Assets/Scripts/Enemies/Enemy.cs"
 "Assets/Scripts/Enemies/Slime.cs"
+"Assets/Scripts/Managers/GameManager.cs"
+"Assets/Scripts/Managers/PlayerManager.cs"
 "Assets/Scripts/Player/Actions.cs"
 "Assets/Scripts/Player/Movement.cs"
 -langversion:9.0

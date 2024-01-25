@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     /// <summary>
     /// Moves the enemy towards the player
     /// </summary>
-    public void moveTowardsPlayer(GameObject player, float yOffset)
+    public void MoveTowardsPlayer(GameObject player, float yOffset)
     {
         gameObject.transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, yOffset, player.transform.position.z), movementSpeed);
     }
