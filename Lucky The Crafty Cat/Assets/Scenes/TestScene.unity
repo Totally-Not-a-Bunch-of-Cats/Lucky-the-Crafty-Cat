@@ -135,10 +135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bird
       objectReference: {fileID: 0}
-    - target: {fileID: 5429833133051440337, guid: 50da8433b1c28764fb2d9faa2409c84b, type: 3}
-      propertyPath: movementSpeed
-      value: 0.025
-      objectReference: {fileID: 0}
     - target: {fileID: 5881878619101128358, guid: 50da8433b1c28764fb2d9faa2409c84b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.047347546
@@ -1237,7 +1233,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8, y: 1, z: 4}
+  m_LocalScale: {x: 3.6, y: 1, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1060516164}

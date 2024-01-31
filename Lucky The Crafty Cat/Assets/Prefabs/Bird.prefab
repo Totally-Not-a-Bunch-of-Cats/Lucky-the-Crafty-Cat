@@ -301,11 +301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5484b1dcd52e1ee4ab0d5f35227947b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.01
+  movementSpeed: 0.025
   health: 100
   damage: 25
   player: {fileID: 0}
-  width: 6.5
+  width: 16
   length: 16
   isAttacking: 0
 --- !u!65 &8018276704213950026

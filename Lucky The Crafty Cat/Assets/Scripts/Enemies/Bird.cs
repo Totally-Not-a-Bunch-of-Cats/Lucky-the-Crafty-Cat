@@ -14,7 +14,7 @@ public class Bird : Enemy
     [SerializeField] private GameObject player;
     
     // Width and Length of Room
-    [SerializeField] private float width = 6.5f;
+    [SerializeField] private float width = 16f;
     [SerializeField] private float length = 16.0f;
 
     // A boolean for whether the bird is currently attacking
