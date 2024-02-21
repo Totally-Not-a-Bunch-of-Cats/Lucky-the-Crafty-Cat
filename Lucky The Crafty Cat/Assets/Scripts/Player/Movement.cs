@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,39 +9,69 @@ using UnityEngine;
 /// </summary>
 public class Movement : MonoBehaviour
 {
-    
-    // The speed at which the player moves
-    [SerializeField] float movementSpeed = 0.01f;
-    // The height that the player can jump
-    [SerializeField] float jumpHeight = 2f;
-    // The health of the player
-    [SerializeField] float playerHealth = 100f;
+    // Reference to PlayerManager
+    [SerializeField] PlayerManager playerStats;
 
-    // Update is called once per frame
+    // Checking for if the player is moving diagonal
+    private bool vertical = false;
+    private bool horizontal = false;
+
+    /// <summary>
+    /// Start is called before the first frame update
+    /// </summary>
+    void Start()
+    {
+        // Sets the size of the collision box based on the zoneOfControl variable
+        playerStats = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerManager>();
+    }
+
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
     void Update()
     {
         // When the user presses the w key or up arrow
         if(Input.GetButton("Forward"))
         {
             Forward();
+            vertical = true;
+        }
+        else if(Input.GetButtonUp("Forward"))
+        {
+            vertical = false;
         }
 
         // When the user presses the s key or down arrow
         if(Input.GetButton("Backward"))
         {
             Backward();
+            vertical = true;
+        }
+        else if(Input.GetButtonUp("Backward"))
+        {
+            vertical = false;
         }
 
         // When the user presses the a key or left arrow
         if(Input.GetButton("Left"))
         {
             Left();
+            horizontal = true;
+        }
+        else if(Input.GetButtonUp("Left"))
+        {
+            horizontal = false;
         }
 
         // When the user presses the d key or right arrow
         if(Input.GetButton("Right"))
         {
             Right();
+            horizontal = true;
+        }
+        else if(Input.GetButtonUp("Right"))
+        {
+            horizontal = false;
         }
 
         // When the user presses the space
@@ -56,7 +87,17 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            movementSpeed = 0.01f;
+            playerStats.movementSpeed = 0.01f;
+        }
+
+        // If the Player is moving at a horizontal
+        if(horizontal && vertical)
+        {
+            playerStats.movementSpeed = 0.005f;
+        }
+        else
+        {
+            playerStats.movementSpeed = 0.01f;
         }
     }
 
@@ -65,7 +106,7 @@ public class Movement : MonoBehaviour
     /// </summary>
     void Forward()
     {
-        Vector3 forwardTransform = new Vector3(0, 0, movementSpeed);
+        Vector3 forwardTransform = new Vector3(0, 0, playerStats.movementSpeed);
         gameObject.transform.position += forwardTransform;
     }
 
@@ -74,7 +115,7 @@ public class Movement : MonoBehaviour
     /// </summary>
     void Backward()
     {
-        Vector3 backwardTransform = new Vector3(0, 0, -movementSpeed);
+        Vector3 backwardTransform = new Vector3(0, 0, -playerStats.movementSpeed);
         gameObject.transform.position += backwardTransform;
     }
 
@@ -83,7 +124,7 @@ public class Movement : MonoBehaviour
     /// </summary>
     void Left()
     {
-        Vector3 leftTransform = new Vector3(-movementSpeed, 0, 0);
+        Vector3 leftTransform = new Vector3(-playerStats.movementSpeed, 0, 0);
         gameObject.transform.position += leftTransform;
     }
 
@@ -92,7 +133,7 @@ public class Movement : MonoBehaviour
     /// </summary>
     void Right()
     {
-        Vector3 rightTransform = new Vector3(movementSpeed, 0, 0);
+        Vector3 rightTransform = new Vector3(playerStats.movementSpeed, 0, 0);
         gameObject.transform.position += rightTransform;
     }
 
@@ -101,7 +142,7 @@ public class Movement : MonoBehaviour
     /// </summary>
     void Jump()
     {
-        gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+        gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * playerStats.jumpHeight, ForceMode.Impulse);
     }
 
     /// <summary>
@@ -109,6 +150,6 @@ public class Movement : MonoBehaviour
     /// </summary>
     void Run()
     {
-        movementSpeed = 0.02f;
+        playerStats.movementSpeed = 0.02f;
     }
 }
