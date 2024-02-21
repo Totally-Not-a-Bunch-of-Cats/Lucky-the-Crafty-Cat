@@ -44,6 +44,8 @@ public class Item : ScriptableObject
 public enum Category
 {
     Equipment,
+    Trap,
+    Tool,
     Material,
     Valuable
 }
